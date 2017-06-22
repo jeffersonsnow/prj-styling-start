@@ -1,0 +1,11 @@
+.selected-project {
+    background-color: teal;
+    cursor: pointer;
+}
+.unselected-project {
+    background-color: white;
+}
+.inactive {
+    border: 1px solid #ccc;
+    /*color: #ccc;*/
+}

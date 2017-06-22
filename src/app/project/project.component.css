@@ -1,0 +1,31 @@
+:host {
+    display: block;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 10px 10px 5px #888888;
+    border-radius: 0px 9px 9px 0px;
+    cursor: pointer
+    /*background-color: teal;*/
+}
+
+:host(.inactive){
+    color: #ccc;
+}
+
+.form-control{
+    display: inline-block;
+    width: 50%;
+}
+/*.btn {
+    border: 2px solid black;
+}*/
+.active-status{
+    color: green;
+}
+.inactive-status{
+    color: yellow;
+}
+.critical-status{
+    color: red;
+}
