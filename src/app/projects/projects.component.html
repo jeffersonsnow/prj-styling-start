@@ -27,6 +27,17 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
+    <div class="loading-parent" [ngClass]="{loading: isLoading, invisible: !isLoading}">
+        <div class="loading"> Loading 
+          <div id="loading1" class="while-loading"> . </div>
+          <div id="loading2" class="while-loading"> . </div>
+          <div id="loading3" class="while-loading"> . </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
     <div
       class="loading-bar"
       *ngIf="!projects">
@@ -40,7 +51,7 @@
       (statusUpdated)="onStatusUpdated($event, i)"
       (projectDeleted)="onProjectDeleted(i)"
       (click)="markedPrjIndex = i"
-      [ngClass]="{inactive: prj.status === 'inactive'}"
-      [ngStyle]="{'background-color' : markedPrjIndex === i ? 'teal' : 'white'}"></app-project>
+      [ngClass]="{inactive: prj.status === 'inactive', 'marked': markedPrjIndex === i, 'unselected': markedPrjIndex !==i}"
+      [ngStyle]="{'width' : markedPrjIndex === i ? '100%' : '75%'}"></app-project>
   </div>
 </div>

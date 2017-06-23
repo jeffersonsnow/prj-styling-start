@@ -1,11 +1,99 @@
-.selected-project {
+.marked{
     background-color: teal;
-    cursor: pointer;
+    transition: all 0.5s ease-in .01s;
+    animation: marked 0.5s ease-out forwards;
 }
-.unselected-project {
+
+@keyframes marked{
+     0% {
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.unselected{
     background-color: white;
+    transition: all 0.5s ease-in .01s;
 }
+
+.loading-bar{
+    width: 100%;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 9px;
+    box-sizing: content-box;
+    /*margin: auto*/
+}
+
+.loading-bar-element{
+    width: 0;
+    height: 20px;
+    background-color: teal;
+    border-radius: 9px;
+    animation: loadingbarslide 2s ease-out infinite;
+}
+
+@keyframes loadingbarslide {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
 .inactive {
     border: 1px solid #ccc;
     /*color: #ccc;*/
 }
+.invisible {
+    display: none;
+}
+.loading-parent{
+    margin: auto;
+}
+.loading {
+    font-size: 20px;
+    /*color: green;*/
+    display: inline-block;
+}
+.while-loading {
+    display: inline-block;
+    animation: loadingmove .3s ease-out forwards;
+}
+#loading1 {
+    animation-delay: .5s;
+}
+#loading2 {
+    animation-delay: 1s;
+}
+#loading3{
+    animation-delay: 1.5s;
+}
+
+.animate-selection{
+
+}
+
+ @keyframes loadingmove {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    25%{
+        transform: translateY(-3px) scale(1);
+    }
+    50%{
+        transform: translateY(-5px) scale(1);
+    }
+    75%{
+        transform: translateY(-7px) scale(1);
+    }
+    100%{
+        transform: translateY(0px) scale(1);
+    }
+ }

@@ -14,6 +14,7 @@ export class ProjectsComponent implements OnInit {
   markedPrjIndex = 0;
   progress = 'progressing';
   createNew = false;
+  isLoading = true;
 
   constructor(private prjService: ProjectsService) { }
 
@@ -23,6 +24,7 @@ export class ProjectsComponent implements OnInit {
         (prj: Project[]) => {
           this.progress = 'finished';
           this.projects = prj;
+          this.isLoading = this.prjService.isLoading;
         }
       );
   }
@@ -39,4 +41,6 @@ export class ProjectsComponent implements OnInit {
     this.createNew = false;
     this.projects.push(project);
   }
+
+
 }

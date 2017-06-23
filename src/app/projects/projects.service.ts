@@ -4,6 +4,7 @@ import { Observer } from 'rxjs/Observer';
 import { Project } from './project.model';
 
 export class ProjectsService {
+  isLoading = true;
   private projects: Project[] = [
     { name: 'Learn Angular Styles', description: 'Practice hard to understand how you may style components and update styles dynamically', status: 'active'},
     { name: 'Learn Angular Animations', description: 'Learn how Angular helps with animating elements on your page', status: 'active'},
@@ -14,8 +15,9 @@ export class ProjectsService {
   loadProjects(): Observable<Project[]> {
     const prjLoader = Observable.create((observer: Observer<Project[]>) => {
       setTimeout(() => {
+        this.isLoading = false;
         observer.next(this.projects);
-      }, 2);
+      }, 2000);
     });
     return prjLoader;
   }
